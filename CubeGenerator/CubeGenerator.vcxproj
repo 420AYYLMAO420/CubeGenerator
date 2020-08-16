@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{B2DE6B8D-FA08-4055-9B3F-17771A24236C}</ProjectGuid>
+    <RootNamespace>CubeGenerator</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>GLEW_STATIC;</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Extern\GLEW\include\;$(SolutionDir)Extern\GLFW\include\;$(SolutionDir)Extern\stb\;$(SolutionDir)Extern\glm\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Extern\GLFW\lib-vc2019\;$(SolutionDir)Extern\GLEW\lib\x64\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>GLEW_STATIC;</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Extern\GLEW\include\;$(SolutionDir)Extern\GLFW\include\;$(SolutionDir)Extern\stb\;$(SolutionDir)Extern\glm\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Extern\GLFW\lib-vc2019\;$(SolutionDir)Extern\GLEW\lib\x64\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="source\App.cpp" />
+    <ClCompile Include="source\Camera.cpp" />
+    <ClCompile Include="source\FragmentShader.cpp" />
+    <ClCompile Include="source\Graphics.cpp" />
+    <ClCompile Include="source\ImGui\imgui.cpp" />
+    <ClCompile Include="source\ImGui\imgui_draw.cpp" />
+    <ClCompile Include="source\ImGui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="source\ImGui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="source\ImGui\imgui_widgets.cpp" />
+    <ClCompile Include="source\IndexBuffer.cpp" />
+    <ClCompile Include="source\Log.cpp" />
+    <ClCompile Include="source\Main.cpp" />
+    <ClCompile Include="source\Shader.cpp" />
+    <ClCompile Include="source\Texture.cpp" />
+    <ClCompile Include="source\Time.cpp" />
+    <ClCompile Include="source\VertexArray.cpp" />
+    <ClCompile Include="source\VertexBuffer.cpp" />
+    <ClCompile Include="source\VertexLayout.cpp" />
+    <ClCompile Include="source\VertexShader.cpp" />
+    <ClCompile Include="source\Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\App.h" />
+    <ClInclude Include="source\Buffer.h" />
+    <ClInclude Include="source\Camera.h" />
+    <ClInclude Include="source\FragmentShader.h" />
+    <ClInclude Include="source\Graphics.h" />
+    <ClInclude Include="source\ImGui\imconfig.h" />
+    <ClInclude Include="source\ImGui\imgui.h" />
+    <ClInclude Include="source\ImGui\imgui_impl_glfw.h" />
+    <ClInclude Include="source\ImGui\imgui_impl_opengl3.h" />
+    <ClInclude Include="source\ImGui\imgui_internal.h" />
+    <ClInclude Include="source\ImGui\imstb_rectpack.h" />
+    <ClInclude Include="source\ImGui\imstb_textedit.h" />
+    <ClInclude Include="source\ImGui\imstb_truetype.h" />
+    <ClInclude Include="source\IndexBuffer.h" />
+    <ClInclude Include="source\Log.h" />
+    <ClInclude Include="source\Resource.h" />
+    <ClInclude Include="source\Shader.h" />
+    <ClInclude Include="source\Texture.h" />
+    <ClInclude Include="source\Time.h" />
+    <ClInclude Include="source\VertexArray.h" />
+    <ClInclude Include="source\VertexBuffer.h" />
+    <ClInclude Include="source\VertexLayout.h" />
+    <ClInclude Include="source\VertexShader.h" />
+    <ClInclude Include="source\Window.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
